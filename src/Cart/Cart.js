@@ -1,38 +1,29 @@
 import React, { Component } from 'react';
 import Total from '../Total/Total';
 import './Cart.css';
+import CartItem from '../CartItem/CartItem'
 
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
-});
 
-class Cart extends Component{
- 
-  render(){
-      const selectedOptions = Object.keys(this.props.state).map((item,idx) => {
-      const featureHash = item + '-' + idx;
-      const itemOption = this.props.state[item];
-      
-      return(<div className="summary__option" key={featureHash}>
-        <div className="summary__option__label">{item} </div>
-        <div className="summary__option__value">{itemOption.name}</div>
-        <div className="summary__option__cost">
-            {USCurrencyFormat.format(itemOption.cost)}
-          </div>
-        </div>);
+
+class Cart extends Component {
+
+  render() {
+    const selectedOptions = Object.keys(this.props.state).map((item, idx) => {
+      return <CartItem item={item} idx={idx}
+      {...this.props}
+      />
 
     });
-    return(
-      <section className="main__summary">     
+    return (
+      <section className="main__summary">
         <h2>Your Cart</h2>
         {selectedOptions}
         <Total cartContents={this.props.state} />
-        </section>
+      </section>
 
     );
   }
-  
+
 }
 
 export default Cart;

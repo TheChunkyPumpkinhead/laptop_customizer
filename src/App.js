@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header/Header';
 import CustomizeLaptop from './CustomizeLaptop/CustomizeLaptop';
 import Cart from './Cart/Cart';
+import FEATURES from "./Store"
 
 class App extends Component{
   state = {
@@ -39,7 +40,7 @@ render(){
     <div className="App">
     <Header />
     <main>
-    <CustomizeLaptop features={this.props.features} 
+    <CustomizeLaptop features={FEATURES} 
     selected={this.state.selected}
     updateFeature={this.updateFeature} />
     <Cart state={this.state.selected} />
