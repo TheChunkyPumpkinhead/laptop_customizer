@@ -3,7 +3,8 @@ import './App.css';
 import Header from './Header/Header';
 import CustomizeLaptop from './CustomizeLaptop/CustomizeLaptop';
 import Cart from './Cart/Cart';
-import FEATURES from "./Store"
+import FEATURES from './Store'
+
 
 class App extends Component{
   state = {

@@ -9,8 +9,9 @@ class Cart extends Component {
 
   render() {
     const selectedOptions = Object.keys(this.props.state).map((item, idx) => {
-      return <CartItem item={item} idx={idx}
-      {...this.props}
+      return < CartItem item={item} idx={idx}
+      key = {idx}
+        {...this.props}
       />
 
     });

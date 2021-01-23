@@ -9,7 +9,7 @@ const USCurrencyFormat = new Intl.NumberFormat('en-US', {
 
 class FeatureOption extends React.Component{
   render(){
-    console.log(this.props.selected);
+    
     return(
       <div key={this.props.itemHash} className="feature__item">
       <input 

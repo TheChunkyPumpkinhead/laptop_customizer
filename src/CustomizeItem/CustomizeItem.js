@@ -11,6 +11,7 @@ export default function CustomizeItem(props) {
         const itemHash = slugify(JSON.stringify(option));
         return (
             <FeatureOption
+            key ={itemHash}
                 itemHash={itemHash}
                 feature={feature}
                 option={option}

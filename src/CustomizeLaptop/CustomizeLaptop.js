@@ -8,6 +8,7 @@ class CustomizeLaptop extends Component {
   render() {
     const features = Object.keys(this.props.features).map((feature, idx) => {
       return <CustomizeItem feature={feature} idx={idx}
+      key={idx}
       features={this.props.features}
       {...this.props}
       />
